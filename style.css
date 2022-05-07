@@ -1,0 +1,81 @@
+body{
+    position: absolute;
+    display: grid;
+    min-height: 100vh;
+    max-width: 300px;
+    place-items: center;
+    line-height: 1.6;
+    background: black;
+    font-family: sans-serif;
+    align-items: center;
+    padding-left: 100px;
+}
+
+.card{
+    color: whitesmoke;
+    background-image: url(asset/fornite-battle-royale.jpg);
+    background-size: cover;
+    padding: 10 0 0;
+    border-radius: 10px;
+    overflow: hidden;
+
+    transition: transform 500ms ease;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card-content{
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: hsl(0 0% 0% / 0.5);
+    transform: translateY(60%);
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-content{
+    transform: translateY(0);
+}
+
+.card-title{
+    position: relative;
+    width: max-content;
+    
+}
+
+.card-title::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: calc(var(--padding) * -1);
+    bottom: 0;
+    width: calc(100% + var(--padding));
+    background: greenyellow;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after{
+    transform: scaleX(1);
+}
+
+.card-body{
+    color: rgb(255 255 255 / 0.85);
+}
+
+.button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: greenyellow;
+    padding: 0.5em 1.25em;
+    border-radius: 3px;
+}
+
+.button:hover,
+.button:focus {
+    background-color: whitesmoke;
+}
